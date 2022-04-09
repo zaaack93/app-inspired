@@ -5386,6 +5386,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -31021,44 +31036,74 @@ var render = function () {
             [
               _c(
                 "PCard",
-                {
-                  attrs: { title: "Order details", sectioned: "", actions: [] },
-                },
-                [_vm._v("\n        View a summary of your order.\n      ")]
-              ),
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "PLayoutSection",
-            { attrs: { oneThird: "" } },
-            [
-              _c(
-                "PCard",
-                { attrs: { title: "Variant", sectioned: "", actions: [] } },
-                [_vm._v("Add Variant")]
-              ),
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "PLayoutSection",
-            { attrs: { oneThird: "" } },
-            [
-              _c(
-                "PCard",
-                { attrs: { title: "Tags", sectioned: "", actions: [] } },
+                { attrs: { sectioned: false, subdued: true } },
                 [
-                  _vm._v("\n        Add tags to your order.\n        "),
-                  _c("PBadge", { attrs: { status: "attention" } }, [
-                    _vm._v("Default Badge"),
-                  ]),
+                  _c("PCardHeader", {
+                    attrs: {
+                      title: "32",
+                      shortDescription: "Today's wishlists",
+                    },
+                    scopedSlots: _vm._u([
+                      {
+                        key: "children",
+                        fn: function () {
+                          return [
+                            _c("PBadge", { attrs: { status: "attention" } }, [
+                              _vm._v("Default Badge"),
+                            ]),
+                          ]
+                        },
+                        proxy: true,
+                      },
+                    ]),
+                  }),
                 ],
                 1
               ),
-              _vm._v("ss\n    "),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "PLayoutSection",
+            { attrs: { oneThird: "" } },
+            [
+              _c(
+                "PCard",
+                { attrs: { sectioned: false } },
+                [
+                  _c("PCardHeader", {
+                    attrs: {
+                      title: "20",
+                      shortDescription: "Yesterday wishlists",
+                      actions: [{ content: "Total Sales", to: "/to-route" }],
+                    },
+                  }),
+                ],
+                1
+              ),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "PLayoutSection",
+            { attrs: { oneThird: "" } },
+            [
+              _c(
+                "PCard",
+                { attrs: { sectioned: false } },
+                [
+                  _c("PCardHeader", {
+                    attrs: {
+                      title: "4420",
+                      shortDescription: "Total wishlists",
+                      actions: [{ content: "Total Sales", to: "/to-route" }],
+                    },
+                  }),
+                ],
+                1
+              ),
             ],
             1
           ),

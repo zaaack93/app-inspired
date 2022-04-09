@@ -2,18 +2,33 @@
   <div>
     <PLayout>
       <PLayoutSection oneThird="">
-        <PCard title="Order details" sectioned="" :actions="[]">
-          View a summary of your order.
+        <PCard :sectioned="false" :subdued="true">
+            <PCardHeader
+            title="32"
+            shortDescription="Today's wishlists"
+            v-slot:children
+            >
+            <PBadge status="attention">Default Badge</PBadge>
+            </PCardHeader>
         </PCard>
       </PLayoutSection>
       <PLayoutSection oneThird="">
-        <PCard title="Variant" sectioned="" :actions="[]">Add Variant</PCard>
+        <PCard :sectioned="false">
+            <PCardHeader
+            title="20"
+            shortDescription="Yesterday wishlists"
+            :actions='[{"content":"Total Sales","to":"/to-route"}]'
+            />
+        </PCard>
       </PLayoutSection>
       <PLayoutSection oneThird="">
-        <PCard title="Tags" sectioned="" :actions="[]">
-          Add tags to your order.
-          <PBadge status="attention">Default Badge</PBadge>
-        </PCard>ss
+        <PCard :sectioned="false">
+            <PCardHeader
+            title="4420"
+            shortDescription="Total wishlists"
+            :actions='[{"content":"Total Sales","to":"/to-route"}]'
+            />
+        </PCard>
       </PLayoutSection>
     </PLayout>
   </div>

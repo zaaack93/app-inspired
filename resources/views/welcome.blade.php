@@ -4,6 +4,6 @@
     <div id="app">
         <navbar></navbar>
 
-        <footerHelp></footerHelp>
+        <footerhelp></footerhelp>
     </div>
 @endsection

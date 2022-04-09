@@ -1,7 +1,7 @@
 <template>
   <PFooterHelp id="MyFooter">
     Learn more about
-    <PLink url="javascript:void(0);">fulfilling orders</PLink>
+    <PLink url="javascript:void(0);">wishlist app</PLink>
   </PFooterHelp>
 </template>
 

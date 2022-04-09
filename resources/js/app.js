@@ -9,9 +9,9 @@ Vue.use(PolarisVue);
 
 //Import navbar globally
 import navbar from "./layouts/navbar.vue"
-import footerHelp from "./layouts/footerHelp.vue"
+import footerhelp from "./layouts/footerhelp.vue"
 
 const app = new Vue({
     el: '#app',
-    components: { navbar,footerHelp }
+    components: { navbar,footerhelp }
 });

@@ -2,6 +2,12 @@ require('./bootstrap');
 
 window.Vue = require('vue').default;
 
+//Setting vue polaris
+import PolarisVue from '@hulkapps/polaris-vue';
+import '@hulkapps/polaris-vue/dist/polaris-vue.min.css';
+Vue.use(PolarisVue);
+
+//Import navbar globally
 import navbar from "./layouts/navbar.vue"
 
 const app = new Vue({

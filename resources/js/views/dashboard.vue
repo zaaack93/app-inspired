@@ -3,7 +3,7 @@
     <PModal
         :open="showmodal"
         sectioned
-        :primaryAction='{"content":"Configure","onAction":"sendConfigure"}'
+        :primaryAction='{"content":"Configure",onAction : function onAction(){alert("Customer saved")}}'
         title="Enter Customer Details"
         :loading="showloading"
       >
@@ -30,7 +30,7 @@ export default {
     data(){
         return {
             showmodal:false,
-            showloading:false
+            showloading:true
         }
     },
     methods:{
@@ -40,6 +40,9 @@ export default {
     },
     mounted(){
         this.showmodal=true;
+        setTimeout(function(){
+            this.showloading=false
+        },3000)
     }
 };
 </script>

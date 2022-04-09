@@ -5428,7 +5428,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       showmodal: false,
-      showloading: false
+      showloading: true
     };
   },
   methods: {
@@ -5438,6 +5438,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.showmodal = true;
+    setTimeout(function () {
+      this.showloading = false;
+    }, 3000);
   }
 });
 
@@ -31298,7 +31301,12 @@ var render = function () {
           attrs: {
             open: _vm.showmodal,
             sectioned: "",
-            primaryAction: { content: "Configure", onAction: "sendConfigure" },
+            primaryAction: {
+              content: "Configure",
+              onAction: function onAction() {
+                _vm.alert("Customer saved")
+              },
+            },
             title: "Enter Customer Details",
             loading: _vm.showloading,
           },

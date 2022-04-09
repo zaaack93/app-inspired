@@ -5329,6 +5329,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -30938,11 +30940,7 @@ var render = function () {
         selected: 0,
       },
     },
-    [
-      _c("PCardSection", { attrs: { title: "All" } }, [
-        _c("p", [_vm._v("Tab 0 selected")]),
-      ]),
-    ],
+    [_c("PCardSection", [_c("router-view")], 1)],
     1
   )
 }

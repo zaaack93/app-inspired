@@ -5369,6 +5369,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -30992,7 +31009,64 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("dashnoard")])
+  return _c(
+    "div",
+    [
+      _c(
+        "PLayout",
+        [
+          _c(
+            "PLayoutSection",
+            { attrs: { oneThird: "" } },
+            [
+              _c(
+                "PCard",
+                {
+                  attrs: { title: "Order details", sectioned: "", actions: [] },
+                },
+                [_vm._v("\n        View a summary of your order.\n      ")]
+              ),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "PLayoutSection",
+            { attrs: { oneThird: "" } },
+            [
+              _c(
+                "PCard",
+                { attrs: { title: "Variant", sectioned: "", actions: [] } },
+                [_vm._v("Add Variant")]
+              ),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "PLayoutSection",
+            { attrs: { oneThird: "" } },
+            [
+              _c(
+                "PCard",
+                { attrs: { title: "Tags", sectioned: "", actions: [] } },
+                [
+                  _vm._v("\n        Add tags to your order.\n        "),
+                  _c("PBadge", { attrs: { status: "attention" } }, [
+                    _vm._v("Default Badge"),
+                  ]),
+                ],
+                1
+              ),
+            ],
+            1
+          ),
+        ],
+        1
+      ),
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

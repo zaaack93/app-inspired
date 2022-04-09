@@ -5313,12 +5313,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -30409,42 +30403,23 @@ var render = function () {
       _c(
         "PLayoutSection",
         [
-          _c("PBanner", { attrs: { title: "Order archived", action: {} } }, [
-            _c("p", [
-              _vm._v("This order was archived on March 7, 2017 at 3:12pm EDT."),
-            ]),
-          ]),
+          _c(
+            "PCard",
+            { attrs: { title: "Order details", sectioned: "", actions: [] } },
+            [_vm._v("\n      View a summary of your order.\n    ")]
+          ),
         ],
         1
       ),
       _vm._v(" "),
       _c(
-        "PLayoutAnnotatedSection",
-        {
-          attrs: {
-            title: "Store details",
-            description:
-              "Shopify and your customers will use this information to contact you.",
-          },
-        },
+        "PLayoutSection",
+        { attrs: { secondary: "" } },
         [
           _c(
             "PCard",
-            { attrs: { sectioned: "", actions: [] } },
-            [
-              _c(
-                "PFormLayout",
-                [
-                  _c("PTextField", { attrs: { label: "Store name" } }),
-                  _vm._v(" "),
-                  _c("PTextField", {
-                    attrs: { label: "Account email", type: "email" },
-                  }),
-                ],
-                1
-              ),
-            ],
-            1
+            { attrs: { title: "Tags", sectioned: "", actions: [] } },
+            [_vm._v("\n      Add tags to your order.\n    ")]
           ),
         ],
         1

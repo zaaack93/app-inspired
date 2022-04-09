@@ -1,16 +1,9 @@
-import {createRouter, createWebHistory} from "vue-router";
+import VueRouter from 'vue-router';
+import routes from  './routes';
 
-const Home = () => import('../views/home/Home')
-const Category = () => import('../views/category/Category')
-const Cart = () => import('../views/cart/Cart')
-const Profile = () => import('../views/profile/Profile')
-
-const routes = [
-]
-
-const router = createRouter({
-    history: createWebHistory(),
+const router = new VueRouter({
+    mode: 'history',
     routes
 })
 
-export default router
+export default router;

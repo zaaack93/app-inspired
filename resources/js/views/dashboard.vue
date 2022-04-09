@@ -2,41 +2,23 @@
   <div>
     <PLayout>
       <PLayoutSection oneThird="">
-        <PCard :sectioned="false" :subdued="true">
-            <PCardHeader
-            title="32"
-            shortDescription="Today's wishlists"
-            v-slot:children
-            >
-            <PBadge status="danger">20%</PBadge>
-            </PCardHeader>
-        </PCard>
+        <status status="20%" title="32" shortDescription="Today's wishlists" variant="warning"></status>
       </PLayoutSection>
       <PLayoutSection oneThird="">
-        <PCard :sectioned="false">
-            <PCardHeader
-            title="20"
-            shortDescription="Yesterday wishlists"
-            v-slot:children
-            >
-            <PBadge status="success">10%</PBadge>
-            </PCardHeader>
-        </PCard>
+        <status status="10%" title="20" shortDescription="Yesterday wishlists" variant="success"></status>
       </PLayoutSection>
       <PLayoutSection oneThird="">
-        <PCard :sectioned="false">
-            <PCardHeader
-            title="4420"
-            shortDescription="Total wishlists"
-            />
-        </PCard>
+        <status status="10%" title="4420" shortDescription="Total wishlists"></status>
       </PLayoutSection>
     </PLayout>
   </div>
 </template>
 
 <script>
-export default {};
+import status from "../components/cards/status"
+export default {
+    components:{status}
+};
 </script>
 
 <style>

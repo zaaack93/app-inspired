@@ -5411,10 +5411,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     status: _components_cards_status__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      showmodal: false
+    };
+  },
+  mounted: function mounted() {
+    this.showmodal = true;
   }
 });
 
@@ -31269,6 +31290,36 @@ var render = function () {
   return _c(
     "div",
     [
+      _c(
+        "PModal",
+        {
+          attrs: {
+            open: _vm.showmodal,
+            sectioned: "",
+            primaryAction: { content: "Save Customer" },
+            secondaryActions: [
+              { content: "Delete Customer", destructive: true },
+              { content: "Cancel" },
+            ],
+            title: "Enter Customer Details",
+          },
+        },
+        [
+          _c(
+            "PFormLayout",
+            [
+              _c("PTextField", { attrs: { label: "First Name" } }),
+              _vm._v(" "),
+              _c("PTextField", { attrs: { label: "Last Name Name" } }),
+              _vm._v(" "),
+              _c("PTextField", { attrs: { label: "Email", type: "email" } }),
+            ],
+            1
+          ),
+        ],
+        1
+      ),
+      _vm._v(" "),
       _c(
         "PLayout",
         [

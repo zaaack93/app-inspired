@@ -1,5 +1,18 @@
 <template>
   <div>
+    <PModal
+        :open="showmodal"
+        sectioned
+        :primaryAction='{"content":"Save Customer"}'
+        :secondaryActions='[{"content":"Delete Customer","destructive":true},{"content":"Cancel"}]'
+        title="Enter Customer Details"
+      >
+        <PFormLayout>
+          <PTextField label="First Name" />
+          <PTextField label="Last Name Name" />
+          <PTextField label="Email" type="email" />
+        </PFormLayout>
+    </PModal>
     <PLayout>
       <PLayoutSection oneThird="">
         <status status="20%" title="32" shortDescription="Today's wishlists" variant="warning"></status>
@@ -17,7 +30,15 @@
 <script>
 import status from "../components/cards/status"
 export default {
-    components:{status}
+    components:{status},
+    data(){
+        return {
+            showmodal:false,
+        }
+    },
+    mounted(){
+        this.showmodal=true;
+    }
 };
 </script>
 

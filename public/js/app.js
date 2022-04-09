@@ -5421,9 +5421,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -5431,8 +5428,14 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      showmodal: false
+      showmodal: false,
+      showloading: false
     };
+  },
+  methods: {
+    sendConfigure: function sendConfigure() {
+      this.showloading = true;
+    }
   },
   mounted: function mounted() {
     this.showmodal = true;
@@ -31296,28 +31299,17 @@ var render = function () {
           attrs: {
             open: _vm.showmodal,
             sectioned: "",
-            primaryAction: { content: "Save Customer" },
-            secondaryActions: [
-              { content: "Delete Customer", destructive: true },
-              { content: "Cancel" },
-            ],
+            primaryAction: { content: "Configure", onAction: "sendConfigure" },
+            close: (_vm.showmodal = false),
             title: "Enter Customer Details",
+            loading: _vm.showloading,
           },
         },
         [
-          _c(
-            "PFormLayout",
-            [
-              _c("PTextField", { attrs: { label: "First Name" } }),
-              _vm._v(" "),
-              _c("PTextField", { attrs: { label: "Last Name Name" } }),
-              _vm._v(" "),
-              _c("PTextField", { attrs: { label: "Email", type: "email" } }),
-            ],
-            1
-          ),
-        ],
-        1
+          _c("p", [
+            _vm._v("Sample paragraph are you sure for configure your app"),
+          ]),
+        ]
       ),
       _vm._v(" "),
       _c(

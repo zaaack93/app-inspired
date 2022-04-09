@@ -3,15 +3,12 @@
     <PModal
         :open="showmodal"
         sectioned
-        :primaryAction='{"content":"Save Customer"}'
-        :secondaryActions='[{"content":"Delete Customer","destructive":true},{"content":"Cancel"}]'
+        :primaryAction='{"content":"Configure","onAction":"sendConfigure"}'
+        :close="showmodal=false"
         title="Enter Customer Details"
+        :loading="showloading"
       >
-        <PFormLayout>
-          <PTextField label="First Name" />
-          <PTextField label="Last Name Name" />
-          <PTextField label="Email" type="email" />
-        </PFormLayout>
+        <p>Sample paragraph are you sure for configure your app</p>
     </PModal>
     <PLayout>
       <PLayoutSection oneThird="">
@@ -34,6 +31,12 @@ export default {
     data(){
         return {
             showmodal:false,
+            showloading:false
+        }
+    },
+    methods:{
+        sendConfigure(){
+            this.showloading=true;
         }
     },
     mounted(){

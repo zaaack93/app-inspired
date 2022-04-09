@@ -8,7 +8,7 @@
             shortDescription="Today's wishlists"
             v-slot:children
             >
-            <PBadge status="attention">Default Badge</PBadge>
+            <PBadge status="danger">20%</PBadge>
             </PCardHeader>
         </PCard>
       </PLayoutSection>
@@ -17,8 +17,10 @@
             <PCardHeader
             title="20"
             shortDescription="Yesterday wishlists"
-            :actions='[{"content":"Total Sales","to":"/to-route"}]'
-            />
+            v-slot:children
+            >
+            <PBadge status="success">10%</PBadge>
+            </PCardHeader>
         </PCard>
       </PLayoutSection>
       <PLayoutSection oneThird="">
@@ -26,7 +28,6 @@
             <PCardHeader
             title="4420"
             shortDescription="Total wishlists"
-            :actions='[{"content":"Total Sales","to":"/to-route"}]'
             />
         </PCard>
       </PLayoutSection>

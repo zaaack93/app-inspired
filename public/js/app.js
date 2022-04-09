@@ -5401,6 +5401,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -31048,8 +31049,8 @@ var render = function () {
                         key: "children",
                         fn: function () {
                           return [
-                            _c("PBadge", { attrs: { status: "attention" } }, [
-                              _vm._v("Default Badge"),
+                            _c("PBadge", { attrs: { status: "danger" } }, [
+                              _vm._v("20%"),
                             ]),
                           ]
                         },
@@ -31076,8 +31077,20 @@ var render = function () {
                     attrs: {
                       title: "20",
                       shortDescription: "Yesterday wishlists",
-                      actions: [{ content: "Total Sales", to: "/to-route" }],
                     },
+                    scopedSlots: _vm._u([
+                      {
+                        key: "children",
+                        fn: function () {
+                          return [
+                            _c("PBadge", { attrs: { status: "success" } }, [
+                              _vm._v("10%"),
+                            ]),
+                          ]
+                        },
+                        proxy: true,
+                      },
+                    ]),
                   }),
                 ],
                 1
@@ -31098,7 +31111,6 @@ var render = function () {
                     attrs: {
                       title: "4420",
                       shortDescription: "Total wishlists",
-                      actions: [{ content: "Total Sales", to: "/to-route" }],
                     },
                   }),
                 ],

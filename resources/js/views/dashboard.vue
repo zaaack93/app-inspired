@@ -13,7 +13,7 @@
         <PCard title="Tags" sectioned="" :actions="[]">
           Add tags to your order.
           <PBadge status="attention">Default Badge</PBadge>
-        </PCard>
+        </PCard>ss
       </PLayoutSection>
     </PLayout>
   </div>

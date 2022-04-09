@@ -5307,12 +5307,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -30398,32 +30392,36 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "PLayout",
+    "PTabs",
+    {
+      attrs: {
+        tabs: [
+          {
+            id: "all-customers-1",
+            content: "All",
+            to: "/all-customers-1",
+            external: false,
+            badge: { content: "10+", status: "critical" },
+          },
+          {
+            id: "accepts-marketing-1",
+            content: "Accepts marketing",
+            to: "/accepts-marketing-content-1",
+          },
+          {
+            id: "repeat-customers-1",
+            content: "Repeat customers",
+            to: "/repeat-customers-content-1",
+          },
+          { id: "prospects-1", content: "Prospects", to: "/prospects-1" },
+        ],
+        selected: 0,
+      },
+    },
     [
-      _c(
-        "PLayoutSection",
-        [
-          _c(
-            "PCard",
-            { attrs: { title: "Order details", sectioned: "", actions: [] } },
-            [_vm._v("\n      View a summary of your order.\n    ")]
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "PLayoutSection",
-        { attrs: { secondary: "" } },
-        [
-          _c(
-            "PCard",
-            { attrs: { title: "Tags", sectioned: "", actions: [] } },
-            [_vm._v("\n      Add tags to your order.\n    ")]
-          ),
-        ],
-        1
-      ),
+      _c("PCardSection", { attrs: { title: "All" } }, [
+        _c("p", [_vm._v("Tab 0 selected")]),
+      ]),
     ],
     1
   )

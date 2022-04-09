@@ -4,16 +4,39 @@ window.Vue = require('vue').default;
 
 //setting router
 import VueRouter from 'vue-router'
-const routes = [
-  { path: '/', component: require('./views/dashboard.vue') },
-  { path: '/products', component: require('./views/products.vue') },
-  { path: '/customers', component: require('./views/customers.vue') },
-  { path: '/settings', component: require('./views/settings.vue') }
-]
 
+Vue.use(VueRouter)
+
+import dashboard from './views/dashboard'
+import products from './views/products'
+import customers from './views/customers'
+import settings from './views/settings'
 const router = new VueRouter({
-  routes
-})
+    mode: 'history',
+    routes: [
+        {
+            path: '/',
+            name: 'dashboard',
+            component: dashboard
+        },
+        {
+            path: '/products',
+            name: 'products',
+            component: products,
+        },
+        {
+            path: '/customers',
+            name: 'customers',
+            component: customers,
+        },
+        {
+            path: '/settings',
+            name: 'settings',
+            component: settings,
+        },
+    ],
+});
+
 //Setting vue polaris
 import PolarisVue from '@hulkapps/polaris-vue';
 import '@hulkapps/polaris-vue/dist/polaris-vue.min.css';
@@ -27,4 +50,4 @@ const app = new Vue({
     el: '#app',
     router,
     components: { navbar,footerhelp }
-}).$mount('#app');
+});

@@ -5675,36 +5675,49 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js");
-/* harmony import */ var _hulkapps_polaris_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @hulkapps/polaris-vue */ "./node_modules/@hulkapps/polaris-vue/dist/polaris-vue.min.js");
-/* harmony import */ var _hulkapps_polaris_vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_hulkapps_polaris_vue__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _hulkapps_polaris_vue_dist_polaris_vue_min_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @hulkapps/polaris-vue/dist/polaris-vue.min.css */ "./node_modules/@hulkapps/polaris-vue/dist/polaris-vue.min.css");
-/* harmony import */ var _layouts_navbar_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./layouts/navbar.vue */ "./resources/js/layouts/navbar.vue");
-/* harmony import */ var _layouts_footerhelp_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./layouts/footerhelp.vue */ "./resources/js/layouts/footerhelp.vue");
+/* harmony import */ var _views_dashboard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./views/dashboard */ "./resources/js/views/dashboard.vue");
+/* harmony import */ var _views_products__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./views/products */ "./resources/js/views/products.vue");
+/* harmony import */ var _views_customers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./views/customers */ "./resources/js/views/customers.vue");
+/* harmony import */ var _views_settings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/settings */ "./resources/js/views/settings.vue");
+/* harmony import */ var _hulkapps_polaris_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @hulkapps/polaris-vue */ "./node_modules/@hulkapps/polaris-vue/dist/polaris-vue.min.js");
+/* harmony import */ var _hulkapps_polaris_vue__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_hulkapps_polaris_vue__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _hulkapps_polaris_vue_dist_polaris_vue_min_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @hulkapps/polaris-vue/dist/polaris-vue.min.css */ "./node_modules/@hulkapps/polaris-vue/dist/polaris-vue.min.css");
+/* harmony import */ var _layouts_navbar_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./layouts/navbar.vue */ "./resources/js/layouts/navbar.vue");
+/* harmony import */ var _layouts_footerhelp_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./layouts/footerhelp.vue */ "./resources/js/layouts/footerhelp.vue");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js")["default"]); //setting router
 
 
-var routes = [{
-  path: '/',
-  component: __webpack_require__(/*! ./views/dashboard.vue */ "./resources/js/views/dashboard.vue")
-}, {
-  path: '/products',
-  component: __webpack_require__(/*! ./views/products.vue */ "./resources/js/views/products.vue")
-}, {
-  path: '/customers',
-  component: __webpack_require__(/*! ./views/customers.vue */ "./resources/js/views/customers.vue")
-}, {
-  path: '/settings',
-  component: __webpack_require__(/*! ./views/settings.vue */ "./resources/js/views/settings.vue")
-}];
+Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+
+
+
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
-  routes: routes
+  mode: 'history',
+  routes: [{
+    path: '/',
+    name: 'dashboard',
+    component: _views_dashboard__WEBPACK_IMPORTED_MODULE_1__["default"]
+  }, {
+    path: '/products',
+    name: 'products',
+    component: _views_products__WEBPACK_IMPORTED_MODULE_2__["default"]
+  }, {
+    path: '/customers',
+    name: 'customers',
+    component: _views_customers__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }, {
+    path: '/settings',
+    name: 'settings',
+    component: _views_settings__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }]
 }); //Setting vue polaris
 
 
 
-Vue.use((_hulkapps_polaris_vue__WEBPACK_IMPORTED_MODULE_1___default())); //Import navbar globally
+Vue.use((_hulkapps_polaris_vue__WEBPACK_IMPORTED_MODULE_5___default())); //Import navbar globally
 
 
 
@@ -5712,10 +5725,10 @@ var app = new Vue({
   el: '#app',
   router: router,
   components: {
-    navbar: _layouts_navbar_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    footerhelp: _layouts_footerhelp_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+    navbar: _layouts_navbar_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
+    footerhelp: _layouts_footerhelp_vue__WEBPACK_IMPORTED_MODULE_8__["default"]
   }
-}).$mount('#app');
+});
 
 /***/ }),
 
@@ -31172,20 +31185,12 @@ var render = function () {
           {
             id: "dashboard",
             content: "Dashboard",
-            to: "/all-customers-1",
+            to: "/",
             badge: { content: "10+", status: "critical" },
           },
-          {
-            id: "products",
-            content: "Products",
-            to: "/accepts-marketing-content-1",
-          },
-          {
-            id: "customers",
-            content: "Customers",
-            to: "/repeat-customers-content-1",
-          },
-          { id: "settings", content: "Settings", to: "/prospects-1" },
+          { id: "products", content: "Products", to: "/products" },
+          { id: "customers", content: "Customers", to: "/customers" },
+          { id: "settings", content: "Settings", to: "/settings" },
         ],
         selected: 0,
       },

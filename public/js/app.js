@@ -5420,7 +5420,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -31300,7 +31299,6 @@ var render = function () {
             open: _vm.showmodal,
             sectioned: "",
             primaryAction: { content: "Configure", onAction: "sendConfigure" },
-            close: (_vm.showmodal = false),
             title: "Enter Customer Details",
             loading: _vm.showloading,
           },

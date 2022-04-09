@@ -4,7 +4,6 @@
         :open="showmodal"
         sectioned
         :primaryAction='{"content":"Configure","onAction":"sendConfigure"}'
-        :close="showmodal=false"
         title="Enter Customer Details"
         :loading="showloading"
       >

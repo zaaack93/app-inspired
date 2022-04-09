@@ -5312,6 +5312,139 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -30398,62 +30531,223 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "PFrame",
-    [
-      _c("PTopBar", {
-        attrs: {
-          slot: "topBar",
-          showNavigationToggle: "",
-          logo: {
-            width: 124,
-            topBarSource:
-              "https://cdn.shopify.com/s/files/1/1564/7647/files/hulk-apps-darken_c0448e92-587f-47a8-9473-5ea0023b5ffd.svg?v=1583731462",
-            url: "javascript:void(0)",
-            accessibilityLabel: "Hulkapps",
+    {
+      attrs: {
+        showMobileNavigation: _vm.mobileNavigationActive,
+        contextualSaveBar: {
+          active: _vm.contextualSaveBarMarkup.isDirty,
+          message: "Unsaved changes",
+          saveAction: {
+            onAction: _vm.handleSave,
           },
+          discardAction: {
+            onAction: _vm.handleDiscard,
+          },
+        },
+        topBar: {
+          showNavigationToggle: true,
+          logo: this.logoMarkup,
           userMenu: {
             id: "Polaris-UserMenu",
             actions: [
               {
-                items: [{ content: "Back to Shopify", icon: "ArrowLeftMinor" }],
+                items: [
+                  {
+                    content: "Community forums",
+                  },
+                ],
               },
-              { items: [{ content: "Community forums" }] },
             ],
             name: "Dharma",
-            detail: "Hulkapps",
+            detail: this.storeName,
             initials: "D",
-            open: false,
-            message: {
-              title: "Shopify Production",
-              description: "New message",
-              action: { content: "Action" },
-              link: {
-                to: "javascript:void(0);",
-                content: "Link",
-                external: true,
-              },
-              badge: { content: "Badge", status: "warning" },
-            },
-          },
-          secondaryMenu: {
-            id: "Polaris-Menu",
-            open: false,
-            actions: [{ items: [{ content: "Community forums" }] }],
-            icon: "QuestionMarkMajor",
+            open: this.topBarMarkup.isUserMenuOpen,
           },
           searchField: {
-            value: "",
+            value: this.topBarMarkup.searchValue,
             placeholder: "Search",
             showFocusBorder: true,
           },
           searchResult: {
             items: [
-              { content: "Shopify help center" },
-              { content: "Community forums" },
+              {
+                content: "Shopify help center",
+              },
+              {
+                content: "Community forums",
+              },
             ],
           },
         },
-        slot: "topBar",
-      }),
+        navigation: {
+          location: "/",
+          showMobileNavigation: true,
+          logo: _vm.logoMarkup,
+          items: [
+            {
+              items: [
+                {
+                  label: "Back to Shopify",
+                  icon: "ArrowLeftMinor",
+                },
+              ],
+            },
+            {
+              separator: true,
+              title: "Hulkapps App",
+              items: [
+                {
+                  label: "Dashboard",
+                  icon: "HomeMajor",
+                },
+                {
+                  label: "Hulkapps Orders",
+                  icon: "OrdersMajor",
+                },
+              ],
+              action: {
+                icon: "ConversationMinor",
+                accessibilityLabel: "Contact support",
+              },
+            },
+          ],
+        },
+        logo: "{\n      width: 124,\n      contextualSaveBarSource:\n        'https://cdn.shopify.com/s/files/1/1564/7647/files/hulk-apps-darken_c0448e92-587f-47a8-9473-5ea0023b5ffd.svg?v=1583731462',\n      url: 'javascript:void(0)',\n      accessibilityLabel: 'Hulkapps',\n  }",
+      },
+    },
+    [
+      _vm.navigationMarkup.isLoading
+        ? _c(
+            "PSkeletonPage",
+            [
+              _c(
+                "PLayout",
+                [
+                  _c(
+                    "PLayoutSection",
+                    [
+                      _c(
+                        "PCard",
+                        { attrs: { sectioned: "" } },
+                        [
+                          _c(
+                            "PTextContainer",
+                            [
+                              _c("PSkeletonDisplayText", {
+                                attrs: { size: "small" },
+                              }),
+                              _vm._v(" "),
+                              _c("PSkeletonBodyText", { attrs: { lines: 9 } }),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+            ],
+            1
+          )
+        : _c(
+            "PPage",
+            { attrs: { title: "Account" } },
+            [
+              _c(
+                "PLayout",
+                [
+                  _c("a", {
+                    ref: "skipToContentTarget",
+                    attrs: { id: "SkipToContentTarget", tabindex: "-1" },
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "PLayoutAnnotatedSection",
+                    {
+                      attrs: {
+                        title: "Account details",
+                        description:
+                          "Hulkapps will use this as your account information.",
+                      },
+                    },
+                    [
+                      _c(
+                        "PCard",
+                        { attrs: { sectioned: "" } },
+                        [
+                          _c(
+                            "PFormLayout",
+                            [
+                              _c("PTextField", {
+                                attrs: {
+                                  label: "Full name",
+                                  value: _vm.nameFieldValue,
+                                },
+                              }),
+                              _vm._v(" "),
+                              _c("PTextField", {
+                                attrs: {
+                                  type: "email",
+                                  label: "Email",
+                                  value: _vm.emailFieldValue,
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+            ],
+            1
+          ),
+      _vm._v(" "),
+      _c(
+        "PModal",
+        {
+          attrs: {
+            open: _vm.modalMarkup.modalActive,
+            title: "Contact Support",
+            primaryAction: {
+              content: "Send",
+            },
+            sectioned: "",
+          },
+        },
+        [
+          _c(
+            "PFormLayout",
+            [
+              _c("PTextField", {
+                attrs: {
+                  label: "Subject",
+                  value: _vm.modalMarkup.supportSubject,
+                },
+              }),
+              _vm._v(" "),
+              _c("PTextField", {
+                attrs: {
+                  label: "Message",
+                  value: _vm.modalMarkup.supportMessage,
+                  multiline: "",
+                },
+              }),
+            ],
+            1
+          ),
+        ],
+        1
+      ),
     ],
     1
   )

@@ -1,5 +1,6 @@
 <template>
-  <PDataTable
+  <PCard sectioned>
+    <PDataTable
         :resourceName="{singular: 'Product', plural: 'Products'}"
         :headings="[
             {
@@ -83,35 +84,30 @@
             }
         }"
     >
-        <template v-slot:item="{item}">
-            <PDataTableRow>
-                <PDataTableCol firstColumn>
-                    <PLink :url="item.product_link">
-                    {{item.product}}
-                    </PLink>
-                </PDataTableCol>
-                <PDataTableCol numeric>{{item.price}}</PDataTableCol>
-                <PDataTableCol numeric>
-                    <PBadge :status="item.sku_status" :progress="item.sku_progress">
-                    {{item.sku}}
-                    </PBadge>
-                </PDataTableCol>
-                <PDataTableCol numeric>{{item.qty}}</PDataTableCol>
-                <PDataTableCol>
-                    <PToggle :checked="item.status"/>
-                </PDataTableCol>
-                <PDataTableCol>
-                    <PStack>
-                        <PStackItem>
-                            <PIcon source="EditMinor"/>
-                        </PStackItem>
-                        <PStackItem>
-                            <PIcon source="DeleteMinor" color="critical"/>
-                        </PStackItem>
-                    </PStack>
-                </PDataTableCol>
-            </PDataTableRow>
+        <template v-slot:item.product="{item}">
+            <PLink :url="item.product_link">
+                {{item.product}}
+            </PLink>
         </template>
+        <template v-slot:item.sku="{item}">
+            <PBadge :status="item.sku_status" :progress="item.sku_progress">
+                {{item.sku}}
+            </PBadge>
+        </template>
+        <template v-slot:item.status="{item}">
+            <PToggle :checked="item.status"/>
+        </template>
+        <template v-slot:item.actions="{item}">
+            <PStack>
+                <PStackItem>
+                    <PIcon source="EditMinor"/>
+                </PStackItem>
+                <PStackItem>
+                    <PIcon source="DeleteMinor" color="critical"/>
+                </PStackItem>
+            </PStack>
+        </template>
+
         <PButtonGroup slot="filter" segmented>
             <PPopover
                 id="popover_1"
@@ -119,22 +115,22 @@
                 preferred-alignment="right"
                 full-width
             >
-                <PButton
-                    slot="activator"
-                    :disclosure="active ? 'up' : 'down'">
-                    Filter Options
-                </PButton>
-                <POptionList
-                    slot="content"
-                    allowMultiple
-                    :selected="selected"
-                    :options="[
-                        {label: 'Rating 1 with a long text', value: '1'},
-                        {label: 'Rating 2', value: '2'},
-                        {label: 'Rating 3', value: '3'},
-                        {label: 'Rating 4', value: '4'},
-                    ]"
-                />
+            <PButton
+                slot="activator"
+                :disclosure="active ? 'up' : 'down'">
+                Filter Options
+            </PButton>
+            <POptionList
+                slot="content"
+                allowMultiple
+                :selected="selected"
+                :options="[
+                    {label: 'Rating 1 with a long text', value: '1'},
+                    {label: 'Rating 2', value: '2'},
+                    {label: 'Rating 3', value: '3'},
+                    {label: 'Rating 4', value: '4'},
+                ]"
+            />
             </PPopover>
             <PPopover
                 id="popover_2"
@@ -157,6 +153,7 @@
             </PPopover>
         </PButtonGroup>
     </PDataTable>
+</PCard>
 </template>
 
 <script>

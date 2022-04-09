@@ -5456,9 +5456,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -30544,273 +30541,261 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "PDataTable",
-    {
-      attrs: {
-        resourceName: { singular: "Product", plural: "Products" },
-        headings: [
-          {
-            content: "Product",
-            value: "product",
-            type: "text",
-            width: "30%",
-          },
-          {
-            content: "Price",
-            value: "price",
-            type: "numeric",
-          },
-          {
-            content: "SKU Number",
-            value: "sku",
-            type: "numeric",
-          },
-          {
-            content: "Net quantity",
-            value: "qty",
-            type: "numeric",
-          },
-          {
-            content: "Status",
-            value: "status",
-            type: "text",
-            sortable: false,
-          },
-          {
-            content: "Actions",
-            value: "actions",
-            type: "text",
-            sortable: false,
-          },
-        ],
-        rows: [
-          {
-            product: "Emerald Silk Gown",
-            product_link: "javascript:void(0);",
-            price: "$875.00",
-            sku: 124689,
-            sku_status: "critical",
-            sku_progress: "incomplete",
-            qty: 140,
-            status: true,
-          },
-          {
-            product: "Mauve Cashmere Scarf",
-            product_link: "javascript:void(0);",
-            price: "$230.00",
-            sku: 124533,
-            sku_status: "warning",
-            sku_progress: "partiallyComplete",
-            qty: 83,
-            status: false,
-          },
-          {
-            product:
-              "Navy Merino Wool Blazer with khaki chinos and yellow belt",
-            product_link: "javascript:void(0);",
-            price: "$445.00",
-            sku: 124518,
-            sku_status: "success",
-            sku_progress: "complete",
-            qty: 32,
-            status: true,
-          },
-        ],
-        totals: ["", "", "", 255, "", ""],
-        hasPagination: true,
-        pagination: {
-          hasPrevious: true,
-          hasNext: true,
-          onNext: function () {
-            _vm.alert("Next")
-          },
-          onPrevious: function () {
-            _vm.alert("Previous")
-          },
-        },
-      },
-      scopedSlots: _vm._u([
+    "PCard",
+    { attrs: { sectioned: "" } },
+    [
+      _c(
+        "PDataTable",
         {
-          key: "item",
-          fn: function (ref) {
-            var item = ref.item
-            return [
-              _c(
-                "PDataTableRow",
-                [
-                  _c(
-                    "PDataTableCol",
-                    { attrs: { firstColumn: "" } },
-                    [
-                      _c("PLink", { attrs: { url: item.product_link } }, [
-                        _vm._v(
-                          "\n                  " +
-                            _vm._s(item.product) +
-                            "\n                  "
-                        ),
-                      ]),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("PDataTableCol", { attrs: { numeric: "" } }, [
-                    _vm._v(_vm._s(item.price)),
+          attrs: {
+            resourceName: { singular: "Product", plural: "Products" },
+            headings: [
+              {
+                content: "Product",
+                value: "product",
+                type: "text",
+                width: "30%",
+              },
+              {
+                content: "Price",
+                value: "price",
+                type: "numeric",
+              },
+              {
+                content: "SKU Number",
+                value: "sku",
+                type: "numeric",
+              },
+              {
+                content: "Net quantity",
+                value: "qty",
+                type: "numeric",
+              },
+              {
+                content: "Status",
+                value: "status",
+                type: "text",
+                sortable: false,
+              },
+              {
+                content: "Actions",
+                value: "actions",
+                type: "text",
+                sortable: false,
+              },
+            ],
+            rows: [
+              {
+                product: "Emerald Silk Gown",
+                product_link: "javascript:void(0);",
+                price: "$875.00",
+                sku: 124689,
+                sku_status: "critical",
+                sku_progress: "incomplete",
+                qty: 140,
+                status: true,
+              },
+              {
+                product: "Mauve Cashmere Scarf",
+                product_link: "javascript:void(0);",
+                price: "$230.00",
+                sku: 124533,
+                sku_status: "warning",
+                sku_progress: "partiallyComplete",
+                qty: 83,
+                status: false,
+              },
+              {
+                product:
+                  "Navy Merino Wool Blazer with khaki chinos and yellow belt",
+                product_link: "javascript:void(0);",
+                price: "$445.00",
+                sku: 124518,
+                sku_status: "success",
+                sku_progress: "complete",
+                qty: 32,
+                status: true,
+              },
+            ],
+            totals: ["", "", "", 255, "", ""],
+            hasPagination: true,
+            pagination: {
+              hasPrevious: true,
+              hasNext: true,
+              onNext: function () {
+                _vm.alert("Next")
+              },
+              onPrevious: function () {
+                _vm.alert("Previous")
+              },
+            },
+          },
+          scopedSlots: _vm._u([
+            {
+              key: "item.product",
+              fn: function (ref) {
+                var item = ref.item
+                return [
+                  _c("PLink", { attrs: { url: item.product_link } }, [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(item.product) +
+                        "\n            "
+                    ),
                   ]),
-                  _vm._v(" "),
+                ]
+              },
+            },
+            {
+              key: "item.sku",
+              fn: function (ref) {
+                var item = ref.item
+                return [
                   _c(
-                    "PDataTableCol",
-                    { attrs: { numeric: "" } },
+                    "PBadge",
+                    {
+                      attrs: {
+                        status: item.sku_status,
+                        progress: item.sku_progress,
+                      },
+                    },
                     [
-                      _c(
-                        "PBadge",
-                        {
-                          attrs: {
-                            status: item.sku_status,
-                            progress: item.sku_progress,
-                          },
-                        },
-                        [
-                          _vm._v(
-                            "\n                  " +
-                              _vm._s(item.sku) +
-                              "\n                  "
-                          ),
-                        ]
+                      _vm._v(
+                        "\n                " +
+                          _vm._s(item.sku) +
+                          "\n            "
                       ),
-                    ],
-                    1
+                    ]
                   ),
-                  _vm._v(" "),
-                  _c("PDataTableCol", { attrs: { numeric: "" } }, [
-                    _vm._v(_vm._s(item.qty)),
-                  ]),
-                  _vm._v(" "),
+                ]
+              },
+            },
+            {
+              key: "item.status",
+              fn: function (ref) {
+                var item = ref.item
+                return [_c("PToggle", { attrs: { checked: item.status } })]
+              },
+            },
+            {
+              key: "item.actions",
+              fn: function (ref) {
+                var item = ref.item
+                return [
                   _c(
-                    "PDataTableCol",
-                    [_c("PToggle", { attrs: { checked: item.status } })],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "PDataTableCol",
+                    "PStack",
                     [
                       _c(
-                        "PStack",
+                        "PStackItem",
+                        [_c("PIcon", { attrs: { source: "EditMinor" } })],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "PStackItem",
                         [
-                          _c(
-                            "PStackItem",
-                            [_c("PIcon", { attrs: { source: "EditMinor" } })],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "PStackItem",
-                            [
-                              _c("PIcon", {
-                                attrs: {
-                                  source: "DeleteMinor",
-                                  color: "critical",
-                                },
-                              }),
-                            ],
-                            1
-                          ),
+                          _c("PIcon", {
+                            attrs: { source: "DeleteMinor", color: "critical" },
+                          }),
                         ],
                         1
                       ),
                     ],
                     1
                   ),
+                ]
+              },
+            },
+          ]),
+        },
+        [
+          _vm._v(" "),
+          _vm._v(" "),
+          _vm._v(" "),
+          _vm._v(" "),
+          _c(
+            "PButtonGroup",
+            { attrs: { slot: "filter", segmented: "" }, slot: "filter" },
+            [
+              _c(
+                "PPopover",
+                {
+                  attrs: {
+                    id: "popover_1",
+                    active: _vm.active,
+                    "preferred-alignment": "right",
+                    "full-width": "",
+                  },
+                },
+                [
+                  _c(
+                    "PButton",
+                    {
+                      attrs: {
+                        slot: "activator",
+                        disclosure: _vm.active ? "up" : "down",
+                      },
+                      slot: "activator",
+                    },
+                    [_vm._v("\n                Filter Options\n            ")]
+                  ),
+                  _vm._v(" "),
+                  _c("POptionList", {
+                    attrs: {
+                      slot: "content",
+                      allowMultiple: "",
+                      selected: _vm.selected,
+                      options: [
+                        { label: "Rating 1 with a long text", value: "1" },
+                        { label: "Rating 2", value: "2" },
+                        { label: "Rating 3", value: "3" },
+                        { label: "Rating 4", value: "4" },
+                      ],
+                    },
+                    slot: "content",
+                  }),
                 ],
                 1
               ),
-            ]
-          },
-        },
-      ]),
-    },
-    [
-      _vm._v(" "),
-      _c(
-        "PButtonGroup",
-        { attrs: { slot: "filter", segmented: "" }, slot: "filter" },
-        [
-          _c(
-            "PPopover",
-            {
-              attrs: {
-                id: "popover_1",
-                active: _vm.active,
-                "preferred-alignment": "right",
-                "full-width": "",
-              },
-            },
-            [
+              _vm._v(" "),
               _c(
-                "PButton",
+                "PPopover",
                 {
                   attrs: {
-                    slot: "activator",
-                    disclosure: _vm.active ? "up" : "down",
+                    id: "popover_2",
+                    active: _vm.active2,
+                    "preferred-alignment": "right",
                   },
-                  slot: "activator",
                 },
-                [_vm._v("\n                  Filter Options\n              ")]
+                [
+                  _c(
+                    "PButton",
+                    {
+                      attrs: {
+                        slot: "activator",
+                        disclosure: _vm.active2 ? "up" : "down",
+                      },
+                      slot: "activator",
+                    },
+                    [_vm._v("\n                    Status\n                ")]
+                  ),
+                  _vm._v(" "),
+                  _c("POptionList", {
+                    attrs: {
+                      slot: "content",
+                      allowMultiple: "",
+                      selected: _vm.status,
+                      options: [
+                        { label: "Active", value: "Active" },
+                        { label: "Pending", value: "Pending" },
+                        { label: "Deleted", value: "Deleted" },
+                      ],
+                    },
+                    slot: "content",
+                  }),
+                ],
+                1
               ),
-              _vm._v(" "),
-              _c("POptionList", {
-                attrs: {
-                  slot: "content",
-                  allowMultiple: "",
-                  selected: _vm.selected,
-                  options: [
-                    { label: "Rating 1 with a long text", value: "1" },
-                    { label: "Rating 2", value: "2" },
-                    { label: "Rating 3", value: "3" },
-                    { label: "Rating 4", value: "4" },
-                  ],
-                },
-                slot: "content",
-              }),
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "PPopover",
-            {
-              attrs: {
-                id: "popover_2",
-                active: _vm.active2,
-                "preferred-alignment": "right",
-              },
-            },
-            [
-              _c(
-                "PButton",
-                {
-                  attrs: {
-                    slot: "activator",
-                    disclosure: _vm.active2 ? "up" : "down",
-                  },
-                  slot: "activator",
-                },
-                [_vm._v("\n                  Status\n              ")]
-              ),
-              _vm._v(" "),
-              _c("POptionList", {
-                attrs: {
-                  slot: "content",
-                  allowMultiple: "",
-                  selected: _vm.status,
-                  options: [
-                    { label: "Active", value: "Active" },
-                    { label: "Pending", value: "Pending" },
-                    { label: "Deleted", value: "Deleted" },
-                  ],
-                },
-                slot: "content",
-              }),
             ],
             1
           ),

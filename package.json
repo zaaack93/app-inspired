@@ -26,6 +26,6 @@
     "dependencies": {
         "@eastsideco/polaris-vue": "^0.1.19",
         "@hulkapps/polaris-vue": "^3.0.9",
-        "vue-router": "^4.0.14"
+        "vue-router": "^3.5.3"
     }
 }

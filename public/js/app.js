@@ -5312,6 +5312,153 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -30397,63 +30544,279 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "PFrame",
-    [
-      _c("PTopBar", {
-        attrs: {
-          slot: "topBar",
-          showNavigationToggle: "",
-          logo: {
-            width: 124,
-            topBarSource:
-              "https://cdn.shopify.com/s/files/1/1564/7647/files/hulk-apps-darken_c0448e92-587f-47a8-9473-5ea0023b5ffd.svg?v=1583731462",
-            url: "javascript:void(0)",
-            accessibilityLabel: "Hulkapps",
+    "PDataTable",
+    {
+      attrs: {
+        resourceName: { singular: "Product", plural: "Products" },
+        headings: [
+          {
+            content: "Product",
+            value: "product",
+            type: "text",
+            width: "30%",
           },
-          userMenu: {
-            id: "Polaris-UserMenu",
-            actions: [
-              {
-                items: [{ content: "Back to Shopify", icon: "ArrowLeftMinor" }],
-              },
-              { items: [{ content: "Community forums" }] },
-            ],
-            name: "Dharma",
-            detail: "Hulkapps",
-            initials: "D",
-            open: false,
-            message: {
-              title: "Shopify Production",
-              description: "New message",
-              action: { content: "Action" },
-              link: {
-                to: "javascript:void(0);",
-                content: "Link",
-                external: true,
-              },
-              badge: { content: "Badge", status: "warning" },
-            },
+          {
+            content: "Price",
+            value: "price",
+            type: "numeric",
           },
-          secondaryMenu: {
-            id: "Polaris-Menu",
-            open: false,
-            actions: [{ items: [{ content: "Community forums" }] }],
-            icon: "QuestionMarkMajor",
+          {
+            content: "SKU Number",
+            value: "sku",
+            type: "numeric",
           },
-          searchField: {
-            value: "",
-            placeholder: "Search",
-            showFocusBorder: true,
+          {
+            content: "Net quantity",
+            value: "qty",
+            type: "numeric",
           },
-          searchResult: {
-            items: [
-              { content: "Shopify help center" },
-              { content: "Community forums" },
-            ],
+          {
+            content: "Status",
+            value: "status",
+            type: "text",
+            sortable: false,
+          },
+          {
+            content: "Actions",
+            value: "actions",
+            type: "text",
+            sortable: false,
+          },
+        ],
+        rows: [
+          {
+            product: "Emerald Silk Gown",
+            product_link: "javascript:void(0);",
+            price: "$875.00",
+            sku: 124689,
+            sku_status: "critical",
+            sku_progress: "incomplete",
+            qty: 140,
+            status: true,
+          },
+          {
+            product: "Mauve Cashmere Scarf",
+            product_link: "javascript:void(0);",
+            price: "$230.00",
+            sku: 124533,
+            sku_status: "warning",
+            sku_progress: "partiallyComplete",
+            qty: 83,
+            status: false,
+          },
+          {
+            product:
+              "Navy Merino Wool Blazer with khaki chinos and yellow belt",
+            product_link: "javascript:void(0);",
+            price: "$445.00",
+            sku: 124518,
+            sku_status: "success",
+            sku_progress: "complete",
+            qty: 32,
+            status: true,
+          },
+        ],
+        totals: ["", "", "", 255, "", ""],
+        hasPagination: true,
+        pagination: {
+          hasPrevious: true,
+          hasNext: true,
+          onNext: function () {
+            _vm.alert("Next")
+          },
+          onPrevious: function () {
+            _vm.alert("Previous")
           },
         },
-        slot: "topBar",
-      }),
+      },
+      scopedSlots: _vm._u([
+        {
+          key: "item",
+          fn: function (ref) {
+            var item = ref.item
+            return [
+              _c(
+                "PDataTableRow",
+                [
+                  _c(
+                    "PDataTableCol",
+                    { attrs: { firstColumn: "" } },
+                    [
+                      _c("PLink", { attrs: { url: item.product_link } }, [
+                        _vm._v(
+                          "\n                  " +
+                            _vm._s(item.product) +
+                            "\n                  "
+                        ),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("PDataTableCol", { attrs: { numeric: "" } }, [
+                    _vm._v(_vm._s(item.price)),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "PDataTableCol",
+                    { attrs: { numeric: "" } },
+                    [
+                      _c(
+                        "PBadge",
+                        {
+                          attrs: {
+                            status: item.sku_status,
+                            progress: item.sku_progress,
+                          },
+                        },
+                        [
+                          _vm._v(
+                            "\n                  " +
+                              _vm._s(item.sku) +
+                              "\n                  "
+                          ),
+                        ]
+                      ),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("PDataTableCol", { attrs: { numeric: "" } }, [
+                    _vm._v(_vm._s(item.qty)),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "PDataTableCol",
+                    [_c("PToggle", { attrs: { checked: item.status } })],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "PDataTableCol",
+                    [
+                      _c(
+                        "PStack",
+                        [
+                          _c(
+                            "PStackItem",
+                            [_c("PIcon", { attrs: { source: "EditMinor" } })],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "PStackItem",
+                            [
+                              _c("PIcon", {
+                                attrs: {
+                                  source: "DeleteMinor",
+                                  color: "critical",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+            ]
+          },
+        },
+      ]),
+    },
+    [
+      _vm._v(" "),
+      _c(
+        "PButtonGroup",
+        { attrs: { slot: "filter", segmented: "" }, slot: "filter" },
+        [
+          _c(
+            "PPopover",
+            {
+              attrs: {
+                id: "popover_1",
+                active: _vm.active,
+                "preferred-alignment": "right",
+                "full-width": "",
+              },
+            },
+            [
+              _c(
+                "PButton",
+                {
+                  attrs: {
+                    slot: "activator",
+                    disclosure: _vm.active ? "up" : "down",
+                  },
+                  slot: "activator",
+                },
+                [_vm._v("\n                  Filter Options\n              ")]
+              ),
+              _vm._v(" "),
+              _c("POptionList", {
+                attrs: {
+                  slot: "content",
+                  allowMultiple: "",
+                  selected: _vm.selected,
+                  options: [
+                    { label: "Rating 1 with a long text", value: "1" },
+                    { label: "Rating 2", value: "2" },
+                    { label: "Rating 3", value: "3" },
+                    { label: "Rating 4", value: "4" },
+                  ],
+                },
+                slot: "content",
+              }),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "PPopover",
+            {
+              attrs: {
+                id: "popover_2",
+                active: _vm.active2,
+                "preferred-alignment": "right",
+              },
+            },
+            [
+              _c(
+                "PButton",
+                {
+                  attrs: {
+                    slot: "activator",
+                    disclosure: _vm.active2 ? "up" : "down",
+                  },
+                  slot: "activator",
+                },
+                [_vm._v("\n                  Status\n              ")]
+              ),
+              _vm._v(" "),
+              _c("POptionList", {
+                attrs: {
+                  slot: "content",
+                  allowMultiple: "",
+                  selected: _vm.status,
+                  options: [
+                    { label: "Active", value: "Active" },
+                    { label: "Pending", value: "Pending" },
+                    { label: "Deleted", value: "Deleted" },
+                  ],
+                },
+                slot: "content",
+              }),
+            ],
+            1
+          ),
+        ],
+        1
+      ),
     ],
     1
   )

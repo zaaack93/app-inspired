@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Str;
 
+$DATABASE_URL = parse_url('postgres://plnzqrzmixwuqs:9a6a18432c07cbeef5a7b63eb42e5eee5356df7aa0e35985d3ae0a544ca10df6@ec2-52-73-155-171.compute-1.amazonaws.com:5432/dbif3b6spalcr3');
+
 return [
 
     /*
@@ -123,7 +125,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_database_'),
         ],
 
         'default' => [

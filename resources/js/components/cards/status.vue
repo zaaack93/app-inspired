@@ -18,6 +18,8 @@ props:[
 }
 </script>
 
-<style>
-
+<style scoped>
+    .Polaris-Card__Header{
+        padding-bottom: 2rem !important;
+    }
 </style>

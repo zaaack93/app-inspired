@@ -8,7 +8,7 @@
         <status status="10%" title="20" shortDescription="Yesterday wishlists" variant="success"></status>
       </PLayoutSection>
       <PLayoutSection oneThird="">
-        <status status="10%" title="4420" shortDescription="Total wishlists"></status>
+        <status title="4420" shortDescription="Total wishlists"></status>
       </PLayoutSection>
     </PLayout>
   </div>

@@ -1,17 +1,16 @@
 <template>
   <div>
+   <PButton destructive loading>
+    Add product
+  </PButton>
     <PModal
         :open="showmodal"
         sectioned
         :primaryAction='{"content":"Configure","loading":showloading,onAction : function onAction(){sendConfigure("Customer saved")}}'
         title="Enter Customer Details"
-        v-slot:children
         :close="function onAction(){showmodal=false}"
       >
         <p>Sample paragraph are you sure for configure your app</p>
-      <PModalFooter>
-
-      </PModalFooter>
     </PModal>
     <PLayout>
       <PLayoutSection oneThird="">

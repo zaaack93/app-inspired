@@ -5421,6 +5421,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -5429,13 +5436,24 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       showmodal: false,
-      showloading: true
+      showloading: false
     };
   },
   methods: {
     sendConfigure: function sendConfigure(param) {
-      alert(param);
+      var _this = this;
+
       this.showloading = true;
+      setTimeout(function () {
+        _this.showmodal = false;
+        _this.showloading = false;
+
+        _this.$pToast.open({
+          message: 'App configured',
+          duration: 3000,
+          position: "top-right"
+        });
+      }, 3000);
     }
   },
   mounted: function mounted() {
@@ -31295,35 +31313,49 @@ var render = function () {
     "div",
     [
       _c(
-        "PButton",
-        { attrs: { destructive: "", download: {}, textAlign: "left" } },
-        [_vm._v("Button")]
-      ),
-      _vm._v(" "),
-      _c(
         "PModal",
         {
           attrs: {
-            open: "false",
+            open: _vm.showmodal,
             sectioned: "",
             primaryAction: {
-              content: "Configure",
-              loading: _vm.showloading,
-              onAction: function onAction() {
-                _vm.sendConfigure("Customer saved")
-              },
+              content: "Save Customer",
+              disabled: _vm.showloading,
+              onAction: _vm.sendConfigure,
             },
-            title: "Enter Customer Details",
-            close: function onAction() {
+            secondaryActions: [
+              {
+                content: "Cancel",
+                onAction: function () {
+                  _vm.showmodal = false
+                },
+              },
+            ],
+            title: "Configure your app",
+            loading: _vm.showloading,
+          },
+          on: {
+            close: function ($event) {
               _vm.showmodal = false
             },
           },
         },
         [
-          _c("p", [
-            _vm._v("Sample paragraph are you sure for configure your app"),
-          ]),
-        ]
+          _c(
+            "PTextContainer",
+            [
+              _c("PHeading", [_vm._v("Please configure your app")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n        Shopify POS is the easiest way to sell your products in person. Available\n        for iPad, iPhone, and Android.\n      "
+                ),
+              ]),
+            ],
+            1
+          ),
+        ],
+        1
       ),
       _vm._v(" "),
       _c(

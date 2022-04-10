@@ -1,14 +1,21 @@
 <template>
   <div>
-   <PButton destructive :download="{}" textAlign="left">Button</PButton>
     <PModal
-        open="false"
+        :open="showmodal"
         sectioned
-        :primaryAction='{"content":"Configure","loading":showloading,onAction : function onAction(){sendConfigure("Customer saved")}}'
-        title="Enter Customer Details"
-        :close="function onAction(){showmodal=false}"
+        :primaryAction='{"content":"Save Customer","disabled":showloading,onAction:sendConfigure}'
+        :secondaryActions='[{"content":"Cancel",onAction:()=>{showmodal=false}}]'
+        title="Configure your app"
+        :loading="showloading"
+        @close="showmodal=false"
       >
-        <p>Sample paragraph are you sure for configure your app</p>
+        <PTextContainer>
+        <PHeading>Please configure your app</PHeading>
+        <p>
+          Shopify POS is the easiest way to sell your products in person. Available
+          for iPad, iPhone, and Android.
+        </p>
+      </PTextContainer>
     </PModal>
     <PLayout>
       <PLayoutSection oneThird="">
@@ -31,13 +38,21 @@ export default {
     data(){
         return {
             showmodal:false,
-            showloading:true
+            showloading:false,
         }
     },
     methods:{
         sendConfigure(param){
-            alert(param)
-            this.showloading=true;
+            this.showloading=true
+            setTimeout(()=>{
+                this.showmodal=false;
+                this.showloading=false;
+                this.$pToast.open({
+                    message: 'App configured',
+                    duration:3000,
+                    position:"top-right"
+                });
+            },3000)
         }
     },
     mounted(){

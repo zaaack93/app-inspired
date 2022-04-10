@@ -5432,15 +5432,13 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    sendConfigure: function sendConfigure() {
+    sendConfigure: function sendConfigure(param) {
+      alert(param);
       this.showloading = true;
     }
   },
   mounted: function mounted() {
     this.showmodal = true;
-    setTimeout(function () {
-      this.showloading = false;
-    }, 3000);
   }
 });
 
@@ -31304,7 +31302,7 @@ var render = function () {
             primaryAction: {
               content: "Configure",
               onAction: function onAction() {
-                _vm.alert("Customer saved")
+                _vm.sendConfigure("Customer saved")
               },
             },
             title: "Enter Customer Details",

@@ -1,10 +1,8 @@
 <template>
   <div>
-   <PButton destructive loading>
-    Add product
-  </PButton>
+   <PButton destructive :download="{}" textAlign="left">Button</PButton>
     <PModal
-        :open="showmodal"
+        open="false"
         sectioned
         :primaryAction='{"content":"Configure","loading":showloading,onAction : function onAction(){sendConfigure("Customer saved")}}'
         title="Enter Customer Details"

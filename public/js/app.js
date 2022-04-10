@@ -5421,8 +5421,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -31296,15 +31294,17 @@ var render = function () {
   return _c(
     "div",
     [
-      _c("PButton", { attrs: { destructive: "", loading: "" } }, [
-        _vm._v("\n  Add product\n"),
-      ]),
+      _c(
+        "PButton",
+        { attrs: { destructive: "", download: {}, textAlign: "left" } },
+        [_vm._v("Button")]
+      ),
       _vm._v(" "),
       _c(
         "PModal",
         {
           attrs: {
-            open: _vm.showmodal,
+            open: "false",
             sectioned: "",
             primaryAction: {
               content: "Configure",

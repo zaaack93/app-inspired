@@ -3,11 +3,15 @@
     <PModal
         :open="showmodal"
         sectioned
-        :primaryAction='{"content":"Configure",onAction : function onAction(){sendConfigure("Customer saved")}}'
+        :primaryAction='{"content":"Configure","loading":showloading,onAction : function onAction(){sendConfigure("Customer saved")}}'
         title="Enter Customer Details"
-        :loading="showloading"
+        v-slot:children
+        :close="function onAction(){showmodal=false}"
       >
         <p>Sample paragraph are you sure for configure your app</p>
+      <PModalFooter>
+
+      </PModalFooter>
     </PModal>
     <PLayout>
       <PLayoutSection oneThird="">

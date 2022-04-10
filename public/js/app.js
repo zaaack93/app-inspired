@@ -5420,6 +5420,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -31293,28 +31297,40 @@ var render = function () {
   return _c(
     "div",
     [
-      _c(
-        "PModal",
-        {
-          attrs: {
-            open: _vm.showmodal,
-            sectioned: "",
-            primaryAction: {
-              content: "Configure",
-              onAction: function onAction() {
-                _vm.sendConfigure("Customer saved")
-              },
-            },
-            title: "Enter Customer Details",
+      _c("PModal", {
+        attrs: {
+          open: _vm.showmodal,
+          sectioned: "",
+          primaryAction: {
+            content: "Configure",
             loading: _vm.showloading,
+            onAction: function onAction() {
+              _vm.sendConfigure("Customer saved")
+            },
+          },
+          title: "Enter Customer Details",
+          close: function onAction() {
+            _vm.showmodal = false
           },
         },
-        [
-          _c("p", [
-            _vm._v("Sample paragraph are you sure for configure your app"),
-          ]),
-        ]
-      ),
+        scopedSlots: _vm._u([
+          {
+            key: "children",
+            fn: function () {
+              return [
+                _c("p", [
+                  _vm._v(
+                    "Sample paragraph are you sure for configure your app"
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("PModalFooter"),
+              ]
+            },
+            proxy: true,
+          },
+        ]),
+      }),
       _vm._v(" "),
       _c(
         "PLayout",
